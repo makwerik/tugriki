@@ -1,0 +1,75 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Конвертер валют {% endblock %}
+
+{% block body %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+
+    <h1>Из рубликов в тугрики</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="converter"> Отдаёте </label>
+        <input type="text" id="converter" name="converter" placeholder="рублей" value="{{ amount }}"> руб.<br><br>
+        <button type="submit"> Конвертировать </button>
+    </form>
+    <h2>Получаете:</h2>
+    <p>{{ result }} тугриков</p>
+{% endblock %}
