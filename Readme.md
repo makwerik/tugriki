@@ -5,3 +5,5 @@
 <code>pip install -r req.txt</code><br>
 <code>cd .\converter</code><br>
 <code>python manage.py runserver</code>
+
+![Screen](https://github.com/makwerik/tugriki/blob/master/Снимок.PNG)
